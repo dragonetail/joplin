@@ -1,0 +1,51 @@
+---
+title: Joplin数据模型
+description: Joplin的主要数据模型和它们之间的关系
+rule_type: architecture
+---
+# Joplin数据模型
+
+Joplin的数据模型基于以下主要实体：
+
+## 主要模型
+
+- **Note（笔记）**: 笔记是Joplin中的基本内容单位，包含Markdown格式的文本内容。
+  - 相关文件: [packages/lib/models/Note.ts](mdc:packages/lib/models/Note.ts)
+
+- **Folder（文件夹）**: 文件夹是组织笔记的结构，可以嵌套形成层级结构。
+  - 相关文件: [packages/lib/models/Folder.ts](mdc:packages/lib/models/Folder.ts)
+
+- **Tag（标签）**: 标签可以应用于笔记，提供另一种组织方式。
+  - 相关文件: [packages/lib/models/Tag.ts](mdc:packages/lib/models/Tag.ts)
+
+- **Resource（资源）**: 资源是附加到笔记中的文件，如图片、文档等。
+  - 相关文件: [packages/lib/models/Resource.ts](mdc:packages/lib/models/Resource.ts)
+
+## 关系模型
+
+- **NoteTag**: 连接笔记和标签的关联表。
+  - 相关文件: [packages/lib/models/NoteTag.ts](mdc:packages/lib/models/NoteTag.ts)
+
+- **RevisionService**: 提供笔记历史版本控制。
+  - 相关文件: [packages/lib/services/RevisionService.ts](mdc:packages/lib/services/RevisionService.ts)
+
+## 基础模型
+
+- **BaseModel**: 所有模型的基类，提供通用功能。
+  - 相关文件: [packages/lib/BaseModel.ts](mdc:packages/lib/BaseModel.ts)
+
+- **BaseItem**: 可同步项目的基类。
+  - 相关文件: [packages/lib/models/BaseItem.ts](mdc:packages/lib/models/BaseItem.ts)
+
+## 数据流
+
+Joplin的数据流主要通过以下方式处理：
+
+1. 用户界面操作触发对模型的修改
+2. 模型变更记录到SQLite数据库
+3. 同步服务将变更发送到配置的同步目标
+4. 变更在多设备间同步传播
+
+## 同步和加密
+
+数据同步时，所有项目都经过端到端加密（如果启用），保证数据安全。加密是在数据离开设备前完成的，确保即使存储提供商也无法访问内容。

@@ -1,0 +1,71 @@
+---
+title: Joplin界面架构
+description: Joplin的用户界面架构和主要组件
+rule_type: architecture
+---
+# Joplin界面架构
+
+Joplin使用不同的UI架构，针对不同平台优化。
+
+## 桌面应用 (Electron)
+
+桌面应用基于Electron框架，使用React构建界面：
+
+- **主界面**: 采用三栏布局（笔记本列表、笔记列表、笔记内容）
+  - 相关文件: [packages/app-desktop/gui/MainScreen/MainScreen.tsx](mdc:packages/app-desktop/gui/MainScreen/MainScreen.tsx)
+
+- **编辑器**: 支持Markdown编辑和预览
+  - 相关文件: [packages/editor/NoteEditor/NoteEditor.tsx](mdc:packages/editor/NoteEditor/NoteEditor.tsx)
+
+- **设置界面**: 配置应用程序选项
+  - 相关文件: [packages/app-desktop/gui/ConfigScreen/ConfigScreen.tsx](mdc:packages/app-desktop/gui/ConfigScreen/ConfigScreen.tsx)
+
+## 移动应用 (React Native)
+
+移动应用使用React Native构建，提供在iOS和Android上的原生体验：
+
+- **笔记列表**: 显示笔记和笔记本
+  - 相关文件: [packages/app-mobile/components/screens/Notes.tsx](mdc:packages/app-mobile/components/screens/Notes.tsx)
+
+- **笔记编辑器**: 移动端优化的编辑器
+  - 相关文件: [packages/app-mobile/components/NoteEditor/NoteEditor.tsx](mdc:packages/app-mobile/components/NoteEditor/NoteEditor.tsx)
+
+## 共享组件
+
+Joplin在不同平台之间共享一些核心组件：
+
+- **Markdown渲染器**: 将Markdown转换为HTML
+  - 相关文件: [packages/renderer/MdToHtml.ts](mdc:packages/renderer/MdToHtml.ts)
+
+- **编辑器核心**: 共享的编辑器逻辑
+  - 相关文件: [packages/editor](mdc:packages/editor)
+
+## 状态管理
+
+Joplin使用Redux管理应用状态：
+
+- **Redux存储**: 集中管理应用状态
+  - 相关文件: [packages/lib/reducer.ts](mdc:packages/lib/reducer.ts)
+
+- **操作**: 定义状态更改
+  - 相关文件: [packages/lib/actions.ts](mdc:packages/lib/actions.ts)
+
+## 主题系统
+
+Joplin支持自定义主题，允许用户调整应用外观：
+
+- **主题管理**: 处理主题加载和应用
+  - 相关文件: [packages/lib/theme.ts](mdc:packages/lib/theme.ts)
+
+- **内置主题**: 默认提供的主题集合
+  - 相关文件: [packages/lib/themes](mdc:packages/lib/themes)
+
+## 插件UI集成
+
+Joplin插件系统允许扩展用户界面：
+
+- **插件UI框架**: 为插件提供UI集成点
+  - 相关文件: [packages/app-desktop/gui/PluginService.ts](mdc:packages/app-desktop/gui/PluginService.ts)
+
+- **菜单集成**: 允许插件添加菜单项
+  - 相关文件: [packages/app-desktop/gui/MenuItems.ts](mdc:packages/app-desktop/gui/MenuItems.ts)

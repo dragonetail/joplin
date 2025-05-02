@@ -1,0 +1,43 @@
+---
+title: Joplin项目概览
+description: Joplin项目的总体架构和主要组件介绍
+rule_type: codebase-overview
+---
+# Joplin项目概览
+
+Joplin是一个开源的笔记和待办事项应用程序，支持不同平台（桌面端、移动端和Web剪辑器）。
+
+## 项目结构
+
+Joplin采用了monorepo结构，所有代码都位于`packages`目录下：
+
+- [packages/app-desktop](mdc:packages/app-desktop)：桌面应用程序（Windows、macOS、Linux）
+- [packages/app-mobile](mdc:packages/app-mobile)：移动应用程序（iOS和Android）
+- [packages/app-cli](mdc:packages/app-cli)：命令行界面
+- [packages/app-clipper](mdc:packages/app-clipper)：Web剪辑器浏览器扩展
+- [packages/lib](mdc:packages/lib)：核心库，包含主要业务逻辑
+- [packages/server](mdc:packages/server)：Joplin Cloud服务器
+- [packages/renderer](mdc:packages/renderer)：Markdown渲染器
+- [packages/editor](mdc:packages/editor)：笔记编辑器组件
+
+## 核心概念
+
+Joplin基于以下核心概念：
+
+1. **笔记（Notes）**：Markdown格式的文档，可以包含文本、图片和附件
+2. **笔记本（Notebooks）**：笔记的组织单位，形成层级结构
+3. **标签（Tags）**：可以应用于笔记的标签
+4. **同步（Sync）**：通过各种服务（Joplin Cloud、Dropbox、OneDrive等）同步数据
+5. **端到端加密（E2EE）**：保护用户数据的加密系统
+6. **插件系统（Plugins）**：扩展应用功能的插件架构
+
+## 技术栈
+
+Joplin使用了以下主要技术：
+
+- TypeScript/JavaScript作为主要编程语言
+- Electron用于桌面应用
+- React Native用于移动应用
+- React用于Web界面和组件
+- SQLite作为数据存储
+- Node.js用于服务器端

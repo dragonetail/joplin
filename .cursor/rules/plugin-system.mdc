@@ -1,0 +1,73 @@
+---
+title: Joplin插件系统
+description: Joplin的插件架构和插件开发指南
+rule_type: feature-explanation
+---
+# Joplin插件系统
+
+Joplin提供了强大的插件系统，允许开发者扩展应用功能。
+
+## 插件架构
+
+Joplin的插件系统基于以下组件：
+
+- **插件服务（PluginService）**: 管理插件的生命周期和集成。
+  - 相关文件: [packages/app-desktop/services/plugins/PluginService.ts](mdc:packages/app-desktop/services/plugins/PluginService.ts)
+
+- **插件API**: 为插件提供功能访问和扩展点。
+  - 相关文件: [packages/lib/services/plugins/api](mdc:packages/lib/services/plugins/api)
+
+- **插件注册表**: 管理已安装的插件。
+  - 相关文件: [packages/app-desktop/services/plugins/PluginRunner.ts](mdc:packages/app-desktop/services/plugins/PluginRunner.ts)
+
+## 插件功能
+
+Joplin插件可以通过多种方式扩展应用：
+
+1. **命令**: 添加新的用户命令。
+   - 相关API: `joplin.commands`
+
+2. **UI元素**: 在应用界面中添加按钮、面板等。
+   - 相关API: `joplin.views`
+
+3. **内容脚本**: 修改笔记渲染方式。
+   - 相关API: `joplin.contentScripts`
+
+4. **设置**: 添加插件特定设置。
+   - 相关API: `joplin.settings`
+
+5. **数据访问**: 读取和修改笔记、文件夹等。
+   - 相关API: `joplin.data`
+
+## 插件开发流程
+
+开发Joplin插件的基本步骤：
+
+1. 创建基本结构 (manifest.json, src/index.ts)
+2. 实现插件功能
+3. 构建插件 (webpack)
+4. 测试插件
+5. 发布到插件库
+
+## 插件安全性
+
+Joplin通过以下方式保证插件安全：
+
+- **沙箱环境**: 插件在受限环境中运行
+- **权限控制**: 插件需声明所需权限
+- **用户确认**: 敏感操作需用户确认
+
+## 插件发布
+
+开发者可以将插件发布到Joplin官方插件库：
+
+- **发布流程**: 通过GitHub仓库提交插件
+- **审核过程**: 插件经过安全和功能审核
+- **更新机制**: 支持插件版本更新
+
+## 示例插件
+
+官方提供了示例插件，帮助开发者快速入门：
+
+- **模板项目**: [packages/app-desktop/plugins/PluginGenerator.ts](mdc:packages/app-desktop/plugins/PluginGenerator.ts)
+- **示例插件**: [packages/default-plugins](mdc:packages/default-plugins)

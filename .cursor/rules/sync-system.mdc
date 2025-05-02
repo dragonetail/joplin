@@ -1,0 +1,62 @@
+---
+title: Joplin同步系统
+description: Joplin的同步架构和支持的服务
+rule_type: feature-explanation
+---
+# Joplin同步系统
+
+Joplin支持多种同步方式，允许用户在不同设备间同步笔记和附件。
+
+## 同步架构
+
+Joplin的同步系统基于以下组件：
+
+- **同步目标（SyncTarget）**: 定义了与特定同步服务交互的接口。
+  - 相关文件: [packages/lib/SyncTargetRegistry.ts](mdc:packages/lib/SyncTargetRegistry.ts)
+
+- **文件API（FileApi）**: 提供与存储服务交互的统一接口。
+  - 相关文件: [packages/lib/file-api.ts](mdc:packages/lib/file-api.ts)
+
+- **同步服务（SyncService）**: 协调同步过程。
+  - 相关文件: [packages/lib/services/SyncService.ts](mdc:packages/lib/services/SyncService.ts)
+
+## 支持的同步服务
+
+Joplin支持以下同步服务：
+
+1. **Joplin Cloud**: 官方提供的同步服务，包含附加功能如协作和发布。
+   - 相关文件: [packages/lib/file-api-driver-joplinServer.ts](mdc:packages/lib/file-api-driver-joplinServer.ts)
+
+2. **Dropbox**: 通过Dropbox API实现同步。
+   - 相关文件: [packages/lib/file-api-driver-dropbox.js](mdc:packages/lib/file-api-driver-dropbox.js)
+
+3. **OneDrive**: 微软OneDrive同步。
+   - 相关文件: [packages/lib/file-api-driver-onedrive.js](mdc:packages/lib/file-api-driver-onedrive.js)
+
+4. **WebDAV**: 支持NextCloud, OwnCloud等WebDAV服务器。
+   - 相关文件: [packages/lib/file-api-driver-webdav.js](mdc:packages/lib/file-api-driver-webdav.js)
+
+5. **文件系统**: 直接同步到本地文件夹。
+   - 相关文件: [packages/lib/file-api-driver-local.ts](mdc:packages/lib/file-api-driver-local.ts)
+
+6. **Amazon S3**: 支持S3兼容的存储服务。
+   - 相关文件: [packages/lib/file-api-driver-amazon-s3.js](mdc:packages/lib/file-api-driver-amazon-s3.js)
+
+## 端到端加密
+
+同步可以启用端到端加密(E2EE)，确保数据在传输和存储过程中的安全：
+
+- **加密服务（EncryptionService）**: 管理加密密钥和加密/解密过程。
+  - 相关文件: [packages/lib/services/e2ee/EncryptionService.ts](mdc:packages/lib/services/e2ee/EncryptionService.ts)
+
+- **主密钥（MasterKey）**: 用于派生其他加密密钥的主密钥管理。
+  - 相关文件: [packages/lib/models/MasterKey.ts](mdc:packages/lib/models/MasterKey.ts)
+
+## 同步工作流程
+
+1. 检测本地和远程更改
+2. 上传本地更改，下载远程更改
+3. 解决冲突（如果有）
+4. 更新本地数据库状态
+
+同步过程设计为增量和高效，只传输更改的数据，并在需要时处理冲突。
