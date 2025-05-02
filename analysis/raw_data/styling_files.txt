@@ -1,0 +1,6 @@
+./packages/app-desktop/gui/ResizableLayout/utils/style.ts
+./packages/app-mobile/components/global-style.ts
+./packages/lib/theme.ts
+./packages/lib/services/style/themeToCss.ts
+./packages/lib/services/style/themeToCss.test.ts
+./packages/editor/CodeMirror/theme.ts

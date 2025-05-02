@@ -1,0 +1,54 @@
+./packages/tools/build-translation.ts:	if (isMac()) pocountPath = translationExecutablePath('pocount');
+./packages/tools/utils/translation.ts:	if (isMac()) sedPrefix += ' ""'; // Note: on macOS it has to be 'sed -i ""' (BSD quirk)
+./packages/tools/utils/translation.ts:	if (isMac()) msgmergePath = translationExecutablePath('msgmerge'); // Needs to have been installed with `brew install gettext`
+./packages/tools/tool-utils.ts:export function isMac() {
+./packages/app-desktop/app.ts:		if (shim.isMac()) {
+./packages/app-desktop/app.ts:			if (shim.isWindows() || shim.isMac()) {
+./packages/app-desktop/ElectronAppWrapper.ts:		if (shim.isWindows() || shim.isMac()) {
+./packages/app-desktop/utils/7zip/getPathToExecutable7Zip.ts:	if (!shim.isMac() && !shim.isWindows()) {
+./packages/app-desktop/gui/NoteEditor/NoteBody/CodeMirror/v5/utils/useKeymap.ts:		if (shim.isMac()) {
+./packages/app-desktop/gui/NoteEditor/NoteBody/TinyMCE/utils/useLinkTooltips.ts:				if (shim.isMac()) {
+./packages/app-desktop/gui/NoteEditor/NoteBody/TinyMCE/utils/useLinkTooltips.ts:				if (shim.isMac()) {
+./packages/app-desktop/gui/KeymapConfig/utils/getLabel.ts:		return shim.isMac() ? _('Preferences') : _('Options');
+./packages/app-desktop/gui/ConfigScreen/controls/MissingPasswordHelpLink.tsx:	const showMacInfoLink = shim.isMac() && process.arch === 'arm64' && newArchitectureReleasedRecently;
+./packages/app-desktop/gui/MenuBar.tsx:	if (shim.isMac()) return;
+./packages/app-desktop/gui/MenuBar.tsx:			if (!shim.isMac()) {
+./packages/app-desktop/gui/MenuBar.tsx:				label: shim.isMac() ? '&JoplinMainMenu' : _('&File'),
+./packages/app-desktop/gui/MenuBar.tsx:					visible: !!shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:					visible: !!shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:					visible: !!shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:					accelerator: shim.isMac() && keymapService.getAccelerator('config'),
+./packages/app-desktop/gui/MenuBar.tsx:					visible: !!shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:					visible: !!shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:				shim.isMac() ? noItem : newNoteItem,
+./packages/app-desktop/gui/MenuBar.tsx:				shim.isMac() ? noItem : newTodoItem,
+./packages/app-desktop/gui/MenuBar.tsx:				shim.isMac() ? noItem : newFolderItem,
+./packages/app-desktop/gui/MenuBar.tsx:				shim.isMac() ? noItem : newSubFolderItem,
+./packages/app-desktop/gui/MenuBar.tsx:					visible: !shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:					visible: !shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:					visible: !shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:				shim.isMac() ? noItem : printItem, {
+./packages/app-desktop/gui/MenuBar.tsx:				...(shim.isMac() ? [] : profilesAndAppInstancesItems),
+./packages/app-desktop/gui/MenuBar.tsx:				shim.isMac() ? {
+./packages/app-desktop/gui/MenuBar.tsx:					accelerator: shim.isMac() && keymapService.getAccelerator('hideApp'),
+./packages/app-desktop/gui/MenuBar.tsx:				shim.isMac() ? {
+./packages/app-desktop/gui/MenuBar.tsx:				shim.isMac() ? {
+./packages/app-desktop/gui/MenuBar.tsx:				visible: !!shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:						accelerator: shim.isMac() && keymapService.getAccelerator('closeWindow'),
+./packages/app-desktop/gui/MenuBar.tsx:						shim.isMac() ? noItem : menuItemDic.toggleMenuBar,
+./packages/app-desktop/gui/MenuBar.tsx:					visible: !!shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:							accelerator: shim.isMac() && keymapService.getAccelerator('minimizeWindow'),
+./packages/app-desktop/gui/MenuBar.tsx:						visible: !shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:						visible: !shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:						visible: !shim.isMac(),
+./packages/app-desktop/gui/MenuBar.tsx:			if (shim.isMac()) {
+./packages/app-desktop/gui/MenuBar.tsx:				shim.isMac() ? rootMenus.macOsApp : null,
+./packages/app-desktop/gui/MenuBar.tsx:				shim.isMac() ? rootMenus.window : null,
+./packages/lib/shim.ts:		if (shim.isMac()) return 'darwin';
+./packages/lib/shim.ts:		return (shim.isWindows() || shim.isMac()) && !shim.isPortable();
+./packages/lib/shim-init-node.ts:	const keytar = (shim.isWindows() || shim.isMac()) && !shim.isPortable() ? options.keytar : null;
+./packages/lib/shim-init-node.ts:		return shim.isMac() && arch() === 'arm64';
+./packages/lib/services/contextkey/contextkey.ts:const isMacintosh = shim.isMac();
+./packages/lib/services/ExternalEditWatcher/utils.ts:		if (shim.isMac() && fileExtension(path) === 'app') {
+./packages/lib/services/AlarmServiceDriverNode.ts:		if (shim.isMac() && shim.isElectron()) {
+./packages/lib/services/AlarmServiceDriverNode.ts:				if (shim.isMac() && shim.isElectron()) {

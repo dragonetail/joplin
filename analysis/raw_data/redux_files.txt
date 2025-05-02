@@ -1,0 +1,10 @@
+./packages/app-desktop/app.reducer.ts
+./packages/app-desktop/app.reducer.test.ts
+./packages/server/src/utils/TransactionHandler.ts
+./packages/lib/reducer.test.ts
+./packages/lib/reducer.ts
+./packages/lib/services/ResourceEditWatcher/reducer.ts
+./packages/lib/services/plugins/reducer.ts
+./packages/lib/services/rest/actionApi.desktop.ts
+./packages/lib/services/share/reducer.ts
+./packages/editor/CodeMirror/getScrollFraction.ts

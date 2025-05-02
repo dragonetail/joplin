@@ -1,0 +1,26 @@
+./packages/utils/Logger.ts:		CREATE TABLE IF NOT EXISTS logs (
+./packages/lib/JoplinDatabase.ts:CREATE TABLE folders (
+./packages/lib/JoplinDatabase.ts:CREATE TABLE notes (
+./packages/lib/JoplinDatabase.ts:CREATE TABLE tags (
+./packages/lib/JoplinDatabase.ts:CREATE TABLE note_tags (
+./packages/lib/JoplinDatabase.ts:CREATE TABLE resources (
+./packages/lib/JoplinDatabase.ts:CREATE TABLE settings (
+./packages/lib/JoplinDatabase.ts:CREATE TABLE table_fields (
+./packages/lib/JoplinDatabase.ts:CREATE TABLE sync_items (
+./packages/lib/JoplinDatabase.ts:CREATE TABLE deleted_items (
+./packages/lib/JoplinDatabase.ts:CREATE TABLE version (
+./packages/lib/JoplinDatabase.ts:					CREATE TABLE deleted_items (
+./packages/lib/JoplinDatabase.ts:				queries.push('CREATE TABLE alarms (id INTEGER PRIMARY KEY AUTOINCREMENT, note_id TEXT NOT NULL, trigger_time INT NOT NULL)');
+./packages/lib/JoplinDatabase.ts:					CREATE TABLE master_keys (
+./packages/lib/JoplinDatabase.ts:					CREATE TABLE item_changes (
+./packages/lib/JoplinDatabase.ts:					CREATE TABLE note_resources (
+./packages/lib/JoplinDatabase.ts:					CREATE TABLE resource_local_states (
+./packages/lib/JoplinDatabase.ts:					CREATE TABLE notes_normalized (
+./packages/lib/JoplinDatabase.ts:					CREATE TABLE revisions (
+./packages/lib/JoplinDatabase.ts:					CREATE TABLE migrations (
+./packages/lib/JoplinDatabase.ts:					CREATE TABLE resources_to_download (
+./packages/lib/JoplinDatabase.ts:					CREATE TABLE key_values (
+./packages/lib/JoplinDatabase.ts:					CREATE TABLE notes_normalized (
+./packages/lib/database.ts:			CREATE TABLE _TABLE_NAME_(_FIELDS_TYPE_);
+./packages/lib/services/database/migrations/45.ts:		CREATE TABLE items_normalized (
+./packages/app-cli/tests/support/plugins/nativeModule/src/index.ts:		db.run("CREATE TABLE lorem (info TEXT)");

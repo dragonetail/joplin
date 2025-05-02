@@ -1,0 +1,4 @@
+./packages/app-desktop/gui/menuCommandNames.ts
+./packages/server/src/utils/views/menu.ts
+./packages/lib/components/shared/side-menu-shared.ts
+./packages/lib/components/shared/side-menu-shared.test.ts

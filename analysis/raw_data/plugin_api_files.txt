@@ -1,0 +1,2 @@
+./packages/app-mobile/components/plugins/PluginRunner.ts:import PluginApiGlobal from '@joplin/lib/services/plugins/api/Global';
+./packages/app-mobile/components/plugins/PluginRunner.ts:	public override async run(plugin: Plugin, pluginApi: PluginApiGlobal) {

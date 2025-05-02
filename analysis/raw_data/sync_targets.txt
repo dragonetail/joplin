@@ -1,0 +1,251 @@
+./packages/app-desktop/app.ts:			reg.logger().info('app.start: doing upgradeSyncTarget action');
+./packages/app-desktop/app.ts:			return { action: 'upgradeSyncTarget' };
+./packages/app-mobile/utils/testing/setupGlobalStore.ts:import BaseSyncTarget from '@joplin/lib/BaseSyncTarget';
+./packages/app-mobile/utils/testing/setupGlobalStore.ts:	BaseSyncTarget.dispatch = store.dispatch;
+./packages/lib/SyncTargetFilesystem.ts:import BaseSyncTarget from './BaseSyncTarget';
+./packages/lib/SyncTargetFilesystem.ts:export default class SyncTargetFilesystem extends BaseSyncTarget {
+./packages/lib/SyncTargetFilesystem.ts:		fileApi.setSyncTargetId(SyncTargetFilesystem.id());
+./packages/lib/SyncTargetOneDrive.ts:import BaseSyncTarget from './BaseSyncTarget';
+./packages/lib/SyncTargetOneDrive.ts:export default class SyncTargetOneDrive extends BaseSyncTarget {
+./packages/lib/SyncTargetOneDrive.ts:		return SyncTargetOneDrive.id();
+./packages/lib/SyncTargetOneDrive.ts:		fileApi.setSyncTargetId(this.syncTargetId());
+./packages/lib/SyncTargetOneDrive.ts:			BaseSyncTarget.dispatch({ type: 'SYNC_REPORT_UPDATE', report: { errors: [error] } });
+./packages/lib/file-api.ts:	public setSyncTargetId(v: number) {
+./packages/lib/Synchronizer.ts:import { checkIfCanSync, fetchSyncInfo, checkSyncTargetIsValid, getActiveMasterKey, localSyncInfo, mergeSyncInfos, saveLocalSyncInfo, setMasterKeyHasBeenUsed, SyncInfo, syncInfoEquals, uploadSyncInfo } from './services/synchronizer/syncInfoUtils';
+./packages/lib/Synchronizer.ts:				if (error.code === 'outdatedSyncTarget') {
+./packages/lib/Synchronizer.ts:					await checkSyncTargetIsValid(this.api());
+./packages/lib/Synchronizer.ts:			} else if (error && ['cannotEncryptEncrypted', 'noActiveMasterKey', 'processingPathTwice', 'failSafe', 'lockError', 'outdatedSyncTarget'].indexOf(error.code) >= 0) {
+./packages/lib/utils/userFetcher.ts:import SyncTargetRegistry from '../SyncTargetRegistry';
+./packages/lib/utils/userFetcher.ts:	if (Setting.value('sync.target') !== SyncTargetRegistry.nameToId('joplinCloud')) {
+./packages/lib/models/settings/settingValidations.test.ts:import SyncTargetRegistry from '../../SyncTargetRegistry';
+./packages/lib/models/settings/settingValidations.test.ts:		const syncTargetId = SyncTargetRegistry.nameToId('memory');
+./packages/lib/models/settings/settingValidations.test.ts:		const newSyncTargetId = SyncTargetRegistry.nameToId('dropbox');
+./packages/lib/models/settings/settingValidations.test.ts:		expect(await settingValidations(['sync.target'], { 'sync.target': newSyncTargetId })).not.toBe('');
+./packages/lib/models/settings/settingValidations.test.ts:		expect(await settingValidations(['sync.target'], { 'sync.target': newSyncTargetId })).toBe('');
+./packages/lib/models/settings/builtInMetadata.ts:import SyncTargetRegistry from '../../SyncTargetRegistry';
+./packages/lib/models/settings/builtInMetadata.ts:				return SyncTargetRegistry.idAndLabelPlainObject(platform);
+./packages/lib/models/settings/builtInMetadata.ts:				return SyncTargetRegistry.optionsOrder();
+./packages/lib/models/settings/builtInMetadata.ts:					return settings['sync.target'] === SyncTargetRegistry.nameToId('filesystem');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('nextcloud');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('nextcloud');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('nextcloud');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('webdav');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('webdav');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('webdav');
+./packages/lib/models/settings/builtInMetadata.ts:					return settings['sync.target'] === SyncTargetRegistry.nameToId('amazon_s3');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('amazon_s3');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('amazon_s3');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('amazon_s3');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('amazon_s3');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('amazon_s3');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('joplinServer');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('joplinServer');
+./packages/lib/models/settings/builtInMetadata.ts:				return settings['sync.target'] === SyncTargetRegistry.nameToId('joplinServer');
+./packages/lib/models/settings/builtInMetadata.ts:					SyncTargetRegistry.nameToId('amazon_s3'),
+./packages/lib/models/settings/builtInMetadata.ts:					SyncTargetRegistry.nameToId('nextcloud'),
+./packages/lib/models/settings/builtInMetadata.ts:					SyncTargetRegistry.nameToId('webdav'),
+./packages/lib/models/settings/builtInMetadata.ts:					SyncTargetRegistry.nameToId('joplinServer'),
+./packages/lib/models/settings/builtInMetadata.ts:						SyncTargetRegistry.nameToId('amazon_s3'),
+./packages/lib/models/settings/builtInMetadata.ts:						SyncTargetRegistry.nameToId('nextcloud'),
+./packages/lib/models/settings/builtInMetadata.ts:						SyncTargetRegistry.nameToId('webdav'),
+./packages/lib/models/settings/builtInMetadata.ts:						SyncTargetRegistry.nameToId('joplinServer'),
+./packages/lib/models/settings/builtInMetadata.ts:						SyncTargetRegistry.nameToId('joplinCloud'),
+./packages/lib/testing/test-utils.ts:import SyncTargetOneDrive from '../SyncTargetOneDrive';
+./packages/lib/testing/test-utils.ts:import SyncTargetRegistry from '../SyncTargetRegistry';
+./packages/lib/testing/test-utils.ts:const SyncTargetMemory = require('../SyncTargetMemory.js');
+./packages/lib/testing/test-utils.ts:import SyncTargetFilesystem from '../SyncTargetFilesystem';
+./packages/lib/testing/test-utils.ts:const SyncTargetNextcloud = require('../SyncTargetNextcloud.js');
+./packages/lib/testing/test-utils.ts:const SyncTargetDropbox = require('../SyncTargetDropbox.js');
+./packages/lib/testing/test-utils.ts:const SyncTargetAmazonS3 = require('../SyncTargetAmazonS3.js');
+./packages/lib/testing/test-utils.ts:const SyncTargetWebDAV = require('../SyncTargetWebDAV.js');
+./packages/lib/testing/test-utils.ts:import SyncTargetJoplinServer from '../SyncTargetJoplinServer';
+./packages/lib/testing/test-utils.ts:import SyncTargetJoplinCloud from '../SyncTargetJoplinCloud';
+./packages/lib/testing/test-utils.ts:import SyncTargetNone from '../SyncTargetNone';
+./packages/lib/testing/test-utils.ts:SyncTargetRegistry.addClass(SyncTargetNone);
+./packages/lib/testing/test-utils.ts:SyncTargetRegistry.addClass(SyncTargetMemory);
+./packages/lib/testing/test-utils.ts:SyncTargetRegistry.addClass(SyncTargetFilesystem);
+./packages/lib/testing/test-utils.ts:SyncTargetRegistry.addClass(SyncTargetOneDrive);
+./packages/lib/testing/test-utils.ts:SyncTargetRegistry.addClass(SyncTargetNextcloud);
+./packages/lib/testing/test-utils.ts:SyncTargetRegistry.addClass(SyncTargetDropbox);
+./packages/lib/testing/test-utils.ts:SyncTargetRegistry.addClass(SyncTargetAmazonS3);
+./packages/lib/testing/test-utils.ts:SyncTargetRegistry.addClass(SyncTargetWebDAV);
+./packages/lib/testing/test-utils.ts:SyncTargetRegistry.addClass(SyncTargetJoplinServer);
+./packages/lib/testing/test-utils.ts:SyncTargetRegistry.addClass(SyncTargetJoplinCloud);
+./packages/lib/testing/test-utils.ts:let isNetworkSyncTarget_ = false;
+./packages/lib/testing/test-utils.ts:function setSyncTargetName(name: string) {
+./packages/lib/testing/test-utils.ts:	syncTargetId_ = SyncTargetRegistry.nameToId(syncTargetName_);
+./packages/lib/testing/test-utils.ts:	sleepTime = syncTargetId_ === SyncTargetRegistry.nameToId('filesystem') ? 1001 : 100;// 400;
+./packages/lib/testing/test-utils.ts:	isNetworkSyncTarget_ = ['nextcloud', 'dropbox', 'onedrive', 'amazon_s3', 'joplinServer', 'joplinCloud'].includes(syncTargetName_);
+./packages/lib/testing/test-utils.ts:setSyncTargetName('memory');
+./packages/lib/testing/test-utils.ts:// setSyncTargetName('filesystem');
+./packages/lib/testing/test-utils.ts:// setSyncTargetName('nextcloud');
+./packages/lib/testing/test-utils.ts:// setSyncTargetName('dropbox');
+./packages/lib/testing/test-utils.ts:// setSyncTargetName('onedrive');
+./packages/lib/testing/test-utils.ts:// setSyncTargetName('amazon_s3');
+./packages/lib/testing/test-utils.ts:// setSyncTargetName('joplinServer');
+./packages/lib/testing/test-utils.ts:// setSyncTargetName('joplinCloud');
+./packages/lib/testing/test-utils.ts:if (isNetworkSyncTarget_) defaultJestTimeout = 60 * 1000 * 10;
+./packages/lib/testing/test-utils.ts:function isNetworkSyncTarget() {
+./packages/lib/testing/test-utils.ts:	return isNetworkSyncTarget_;
+./packages/lib/testing/test-utils.ts:		const SyncTargetClass = SyncTargetRegistry.classById(syncTargetId_);
+./packages/lib/testing/test-utils.ts:		const syncTarget = new SyncTargetClass(db(id));
+./packages/lib/testing/test-utils.ts:	if (syncTargetId_ === SyncTargetRegistry.nameToId('filesystem')) {
+./packages/lib/testing/test-utils.ts:	} else if (syncTargetId_ === SyncTargetRegistry.nameToId('memory')) {
+./packages/lib/testing/test-utils.ts:	} else if (syncTargetId_ === SyncTargetRegistry.nameToId('nextcloud')) {
+./packages/lib/testing/test-utils.ts:	} else if (syncTargetId_ === SyncTargetRegistry.nameToId('dropbox')) {
+./packages/lib/testing/test-utils.ts:	} else if (syncTargetId_ === SyncTargetRegistry.nameToId('onedrive')) {
+./packages/lib/testing/test-utils.ts:	} else if (syncTargetId_ === SyncTargetRegistry.nameToId('amazon_s3')) {
+./packages/lib/testing/test-utils.ts:	} else if (syncTargetId_ === SyncTargetRegistry.nameToId('joplinServer') || syncTargetId_ === SyncTargetRegistry.nameToId('joplinCloud')) {
+./packages/lib/testing/test-utils.ts:	fileApi.setSyncTargetId(syncTargetId_);
+./packages/lib/testing/test-utils.ts:	fileApi.requestRepeatCount_ = isNetworkSyncTarget_ ? 1 : 0;
+./packages/lib/testing/test-utils.ts:async function allSyncTargetItemsEncrypted() {
+./packages/lib/testing/test-utils.ts:export { supportDir, createNoteAndResource, createTempFile, createTestShareData, simulateReadOnlyShareEnv, waitForFolderCount, afterAllCleanUp, exportDir, synchronizerStart, afterEachCleanUp, syncTargetName, setSyncTargetName, syncDir, createTempDir, isNetworkSyncTarget, kvStore, expectThrow, logger, expectNotThrow, resourceService, resourceFetcher, tempFilePath, allSyncTargetItemsEncrypted, msleep, setupDatabase, revisionService, setupDatabaseAndSynchronizer, db, synchronizer, fileApi, sleep, clearDatabase, switchClient, syncTargetId, objectsEqual, checkThrowAsync, checkThrow, encryptionService, loadEncryptionMasterKey, fileContentEqual, decryptionWorker, currentClientId, id, ids, sortedIds, at, createNTestNotes, createNTestFolders, createNTestTags, TestApp };
+./packages/lib/testing/syncTargetUtils.ts:export async function deploySyncTargetSnapshot(syncTargetType: string, syncVersion: number) {
+./packages/lib/testing/syncTargetUtils.ts:	const validSyncTargetTypes = ['normal', 'e2ee'];
+./packages/lib/testing/syncTargetUtils.ts:	if (!validSyncTargetTypes.includes(syncTargetType)) throw new Error(`Sync target type must be: ${validSyncTargetTypes.join(', ')}`);
+./packages/lib/components/shared/config/shouldShowMissingPasswordWarning.test.ts:import SyncTargetRegistry from '../../../SyncTargetRegistry';
+./packages/lib/components/shared/config/shouldShowMissingPasswordWarning.test.ts:			const targetId = SyncTargetRegistry.nameToId(targetName);
+./packages/lib/components/shared/config/shouldShowMissingPasswordWarning.test.ts:			const targetId = SyncTargetRegistry.nameToId(targetName);
+./packages/lib/components/shared/config/shouldShowMissingPasswordWarning.ts:import SyncTargetRegistry from '../../../SyncTargetRegistry';
+./packages/lib/components/shared/config/shouldShowMissingPasswordWarning.ts:	const syncTargetClass = SyncTargetRegistry.classById(syncTargetId);
+./packages/lib/components/shared/config/config-shared.ts:import SyncTargetRegistry from '../../../SyncTargetRegistry';
+./packages/lib/components/shared/config/config-shared.ts:	const SyncTargetClass = SyncTargetRegistry.classById(syncTargetId);
+./packages/lib/components/shared/config/config-shared.ts:	const result = await SyncTargetClass.checkConfig(ObjectUtils.convertValuesToFunctions(options));
+./packages/lib/components/shared/config/config-shared.ts:		const syncTargetIsJoplinCloud = settings['sync.target'] === SyncTargetRegistry.nameToId('joplinCloud');
+./packages/lib/components/shared/reduxSharedMiddleware.ts:		reg.resetSyncTarget();
+./packages/lib/registry.test.ts:	let originalSyncTarget: typeof reg.syncTarget;
+./packages/lib/registry.test.ts:		originalSyncTarget = reg.syncTarget;
+./packages/lib/registry.test.ts:		reg.syncTarget = originalSyncTarget;
+./packages/lib/registry.ts:import SyncTargetRegistry from './SyncTargetRegistry';
+./packages/lib/registry.ts:	public resetSyncTarget(syncTargetId: number = null) {
+./packages/lib/registry.ts:		return this.syncTarget(SyncTargetRegistry.nameToId('nextcloud'));
+./packages/lib/registry.ts:		const SyncTargetClass = SyncTargetRegistry.classById(syncTargetId);
+./packages/lib/registry.ts:		const target = new SyncTargetClass(this.db());
+./packages/lib/SyncTargetRegistry.ts:import type BaseSyncTarget from './BaseSyncTarget';
+./packages/lib/SyncTargetRegistry.ts:export interface SyncTargetInfo {
+./packages/lib/SyncTargetRegistry.ts:	classRef: typeof BaseSyncTarget;
+./packages/lib/SyncTargetRegistry.ts:export default class SyncTargetRegistry {
+./packages/lib/SyncTargetRegistry.ts:	private static reg_: Record<number, typeof BaseSyncTarget> = {};
+./packages/lib/SyncTargetRegistry.ts:		const info = SyncTargetRegistry.reg[syncTargetId];
+./packages/lib/SyncTargetRegistry.ts:	public static infoByName(name: string): SyncTargetInfo {
+./packages/lib/SyncTargetRegistry.ts:		for (const [, SyncTargetClass] of Object.entries(this.reg)) {
+./packages/lib/SyncTargetRegistry.ts:			if (SyncTargetClass.targetName() === name) {
+./packages/lib/SyncTargetRegistry.ts:				const output: SyncTargetInfo = {
+./packages/lib/SyncTargetRegistry.ts:					id: SyncTargetClass.id(),
+./packages/lib/SyncTargetRegistry.ts:					name: SyncTargetClass.targetName(),
+./packages/lib/SyncTargetRegistry.ts:					label: SyncTargetClass.label(),
+./packages/lib/SyncTargetRegistry.ts:					classRef: SyncTargetClass,
+./packages/lib/SyncTargetRegistry.ts:					description: SyncTargetClass.description(),
+./packages/lib/SyncTargetRegistry.ts:					supportsSelfHosted: SyncTargetClass.supportsSelfHosted(),
+./packages/lib/SyncTargetRegistry.ts:					supportsConfigCheck: SyncTargetClass.supportsConfigCheck(),
+./packages/lib/SyncTargetRegistry.ts:					supportsRecursiveLinkedNotes: SyncTargetClass.supportsRecursiveLinkedNotes(),
+./packages/lib/SyncTargetRegistry.ts:					supportsShare: SyncTargetClass.supportsShare(),
+./packages/lib/SyncTargetRegistry.ts:	public static infoById(id: number): SyncTargetInfo {
+./packages/lib/SyncTargetRegistry.ts:	public static addClass(SyncTargetClass: typeof BaseSyncTarget) {
+./packages/lib/SyncTargetRegistry.ts:		this.reg[SyncTargetClass.id()] = SyncTargetClass;
+./packages/lib/BaseSyncTarget.ts:export default class BaseSyncTarget {
+./packages/lib/BaseSyncTarget.ts:				this.synchronizer_.dispatch = BaseSyncTarget.dispatch;
+./packages/lib/SyncTargetJoplinCloud.ts:import BaseSyncTarget from './BaseSyncTarget';
+./packages/lib/SyncTargetJoplinCloud.ts:import SyncTargetJoplinServer, { initFileApi } from './SyncTargetJoplinServer';
+./packages/lib/SyncTargetJoplinCloud.ts:export default class SyncTargetJoplinCloud extends BaseSyncTarget {
+./packages/lib/SyncTargetJoplinCloud.ts:		return SyncTargetJoplinServer.supportsConfigCheck();
+./packages/lib/SyncTargetJoplinCloud.ts:		return SyncTargetJoplinServer.checkConfig({
+./packages/lib/SyncTargetJoplinCloud.ts:		}, SyncTargetJoplinCloud.id());
+./packages/lib/SyncTargetJoplinCloud.ts:		return initFileApi(SyncTargetJoplinCloud.id(), this.logger(), {
+./packages/lib/BaseApplication.ts:import SyncTargetJoplinServer from './SyncTargetJoplinServer';
+./packages/lib/BaseApplication.ts:import SyncTargetOneDrive from './SyncTargetOneDrive';
+./packages/lib/BaseApplication.ts:import BaseSyncTarget from './BaseSyncTarget';
+./packages/lib/BaseApplication.ts:import SyncTargetRegistry from './SyncTargetRegistry';
+./packages/lib/BaseApplication.ts:import SyncTargetFilesystem from './SyncTargetFilesystem';
+./packages/lib/BaseApplication.ts:const SyncTargetNextcloud = require('./SyncTargetNextcloud.js');
+./packages/lib/BaseApplication.ts:const SyncTargetWebDAV = require('./SyncTargetWebDAV.js');
+./packages/lib/BaseApplication.ts:const SyncTargetDropbox = require('./SyncTargetDropbox.js');
+./packages/lib/BaseApplication.ts:const SyncTargetAmazonS3 = require('./SyncTargetAmazonS3.js');
+./packages/lib/BaseApplication.ts:import SyncTargetJoplinCloud from './SyncTargetJoplinCloud';
+./packages/lib/BaseApplication.ts:import SyncTargetNone from './SyncTargetNone';
+./packages/lib/BaseApplication.ts:		BaseSyncTarget.dispatch = this.store().dispatch;
+./packages/lib/BaseApplication.ts:		BaseSyncTarget.dispatch = function() {};
+./packages/lib/BaseApplication.ts:		SyncTargetRegistry.addClass(SyncTargetNone);
+./packages/lib/BaseApplication.ts:		SyncTargetRegistry.addClass(SyncTargetFilesystem);
+./packages/lib/BaseApplication.ts:		SyncTargetRegistry.addClass(SyncTargetOneDrive);
+./packages/lib/BaseApplication.ts:		SyncTargetRegistry.addClass(SyncTargetNextcloud);
+./packages/lib/BaseApplication.ts:		SyncTargetRegistry.addClass(SyncTargetWebDAV);
+./packages/lib/BaseApplication.ts:		SyncTargetRegistry.addClass(SyncTargetDropbox);
+./packages/lib/BaseApplication.ts:		SyncTargetRegistry.addClass(SyncTargetAmazonS3);
+./packages/lib/BaseApplication.ts:		SyncTargetRegistry.addClass(SyncTargetJoplinServer);
+./packages/lib/BaseApplication.ts:		SyncTargetRegistry.addClass(SyncTargetJoplinCloud);
+./packages/lib/services/ReportService.test.ts:import SyncTargetRegistry from '../SyncTargetRegistry';
+./packages/lib/services/ReportService.test.ts:		const syncTargetId = SyncTargetRegistry.nameToId('joplinServer');
+./packages/lib/services/ReportService.test.ts:		const syncTargetId = SyncTargetRegistry.nameToId('joplinServer');
+./packages/lib/services/joplinCloudUtils.ts:import SyncTargetRegistry from '../SyncTargetRegistry';
+./packages/lib/services/joplinCloudUtils.ts:		Setting.setValue('sync.target', SyncTargetRegistry.nameToId('joplinCloud'));
+./packages/lib/services/ResourceService.test.ts:import { resourceService, decryptionWorker, supportDir, encryptionService, loadEncryptionMasterKey, allSyncTargetItemsEncrypted, setupDatabaseAndSynchronizer, db, synchronizer, switchClient } from '../testing/test-utils';
+./packages/lib/services/ResourceService.test.ts:		expect(await allSyncTargetItemsEncrypted()).toBe(true);
+./packages/lib/services/synchronizer/synchronizer_MigrationHandler.test.ts:// node tests/support/createSyncTargetSnapshot.js normal && node tests/support/createSyncTargetSnapshot.js e2ee
+./packages/lib/services/synchronizer/synchronizer_MigrationHandler.test.ts:import { setSyncTargetName, fileApi, synchronizer, decryptionWorker, encryptionService, setupDatabaseAndSynchronizer, switchClient, expectThrow, expectNotThrow, db } from '../../testing/test-utils';
+./packages/lib/services/synchronizer/synchronizer_MigrationHandler.test.ts:import { deploySyncTargetSnapshot, testData, checkTestData } from '../../testing/syncTargetUtils';
+./packages/lib/services/synchronizer/synchronizer_MigrationHandler.test.ts:	await deploySyncTargetSnapshot('normal', migrationVersion - 1);
+./packages/lib/services/synchronizer/synchronizer_MigrationHandler.test.ts:	await deploySyncTargetSnapshot('e2ee', migrationVersion - 1);
+./packages/lib/services/synchronizer/synchronizer_MigrationHandler.test.ts:let previousSyncTargetName = '';
+./packages/lib/services/synchronizer/synchronizer_MigrationHandler.test.ts:		previousSyncTargetName = setSyncTargetName('filesystem');
+./packages/lib/services/synchronizer/synchronizer_MigrationHandler.test.ts:		setSyncTargetName(previousSyncTargetName);
+./packages/lib/services/synchronizer/synchronizer_MigrationHandler.test.ts:		await expectThrow(async () => await migrationHandler().checkCanSync(), 'outdatedSyncTarget');
+./packages/lib/services/synchronizer/syncInfoUtils.test.ts:import { checkIfCanSync, localSyncInfo, masterKeyEnabled, mergeSyncInfos, saveLocalSyncInfo, setMasterKeyEnabled, SyncInfo, syncInfoEquals, checkSyncTargetIsValid, fetchSyncInfo } from './syncInfoUtils';
+./packages/lib/services/synchronizer/syncInfoUtils.test.ts:	it('should succeed when info.json exists for checkSyncTargetIsValid', (async () => {
+./packages/lib/services/synchronizer/syncInfoUtils.test.ts:		expect(checkSyncTargetIsValid(fileApi())).resolves.not.toThrow();
+./packages/lib/services/synchronizer/syncInfoUtils.test.ts:	it('should succeed when info.json does not exist and failsafe is disabled for checkSyncTargetIsValid', (async () => {
+./packages/lib/services/synchronizer/syncInfoUtils.test.ts:		expect(checkSyncTargetIsValid(fileApi())).resolves.not.toThrow();
+./packages/lib/services/synchronizer/syncInfoUtils.test.ts:	it('should fail with failsafe error when info.json does not exist for checkSyncTargetIsValid', (async () => {
+./packages/lib/services/synchronizer/syncInfoUtils.test.ts:		await expect(checkSyncTargetIsValid(fileApi())).rejects.toThrow('Fail-safe: ');
+./packages/lib/services/synchronizer/MigrationHandler.ts:interface SyncTargetInfo {
+./packages/lib/services/synchronizer/MigrationHandler.ts:	public async fetchSyncTargetInfo(): Promise<SyncTargetInfo> {
+./packages/lib/services/synchronizer/MigrationHandler.ts:		let output: SyncTargetInfo = { version: 0 };
+./packages/lib/services/synchronizer/MigrationHandler.ts:	private serializeSyncTargetInfo(info: SyncTargetInfo) {
+./packages/lib/services/synchronizer/MigrationHandler.ts:		const supportedSyncTargetVersion = Setting.value('syncVersion');
+./packages/lib/services/synchronizer/MigrationHandler.ts:			if (remoteInfo.version > supportedSyncTargetVersion) {
+./packages/lib/services/synchronizer/MigrationHandler.ts:				throw new JoplinError(sprintf('Sync version of the target (%d) is greater than the version supported by the app (%d). Please upgrade your app.', remoteInfo.version, supportedSyncTargetVersion), 'outdatedClient');
+./packages/lib/services/synchronizer/MigrationHandler.ts:			} else if (remoteInfo.version < supportedSyncTargetVersion) {
+./packages/lib/services/synchronizer/MigrationHandler.ts:				throw new JoplinError(sprintf('Sync version of the target (%d) is lower than the version supported by the app (%d). Please upgrade the sync target.', remoteInfo.version, supportedSyncTargetVersion), 'outdatedSyncTarget');
+./packages/lib/services/synchronizer/MigrationHandler.ts:		const supportedSyncTargetVersion = Setting.value('syncVersion');
+./packages/lib/services/synchronizer/MigrationHandler.ts:		const syncTargetInfo = await this.fetchSyncTargetInfo();
+./packages/lib/services/synchronizer/MigrationHandler.ts:		if (syncTargetInfo.version > supportedSyncTargetVersion) {
+./packages/lib/services/synchronizer/MigrationHandler.ts:			throw new JoplinError(sprintf('Sync version of the target (%d) is greater than the version supported by the app (%d). Please upgrade your app.', syncTargetInfo.version, supportedSyncTargetVersion), 'outdatedClient');
+./packages/lib/services/synchronizer/MigrationHandler.ts:		// if (supportedSyncTargetVersion !== migrations.length - 1) {
+./packages/lib/services/synchronizer/MigrationHandler.ts:		// 	throw new JoplinError('Application error: mismatch between max supported sync version and max migration number: ' + supportedSyncTargetVersion + ' / ' + (migrations.length - 1));
+./packages/lib/services/synchronizer/MigrationHandler.ts:						await this.api_.put('info.json', this.serializeSyncTargetInfo({
+./packages/lib/services/synchronizer/gui/useSyncTargetUpgrade.ts:export interface SyncTargetUpgradeResult {
+./packages/lib/services/synchronizer/gui/useSyncTargetUpgrade.ts:export default function useSyncTargetUpgrade(): SyncTargetUpgradeResult {
+./packages/lib/services/synchronizer/gui/useSyncTargetUpgrade.ts:	async function upgradeSyncTarget() {
+./packages/lib/services/synchronizer/gui/useSyncTargetUpgrade.ts:		reg.logger().info('useSyncTargetUpgrade: Starting process...');
+./packages/lib/services/synchronizer/gui/useSyncTargetUpgrade.ts:			reg.logger().info('useSyncTargetUpgrade: Acquire synchronizer...');
+./packages/lib/services/synchronizer/gui/useSyncTargetUpgrade.ts:			reg.logger().info('useSyncTargetUpgrade: Create migration handler...');
+./packages/lib/services/synchronizer/gui/useSyncTargetUpgrade.ts:			reg.logger().info('useSyncTargetUpgrade: Start upgrade...');
+./packages/lib/services/synchronizer/gui/useSyncTargetUpgrade.ts:		reg.logger().info('useSyncTargetUpgrade: Error:', error);
+./packages/lib/services/synchronizer/gui/useSyncTargetUpgrade.ts:		void upgradeSyncTarget();
+./packages/lib/services/synchronizer/syncInfoUtils.ts:export async function checkSyncTargetIsValid(api: FileApi): Promise<void> {
+./packages/lib/services/synchronizer/tools.ts:import SyncTargetRegistry from '../../SyncTargetRegistry';
+./packages/lib/services/synchronizer/tools.ts:	const syncTargetIds = SyncTargetRegistry.allIds();
+./packages/lib/services/synchronizer/Synchronizer.e2ee.test.ts:import { synchronizerStart, allSyncTargetItemsEncrypted, kvStore, supportDir, setupDatabaseAndSynchronizer, synchronizer, fileApi, switchClient, encryptionService, loadEncryptionMasterKey, decryptionWorker, checkThrowAsync } from '../../testing/test-utils';
+./packages/lib/services/synchronizer/Synchronizer.e2ee.test.ts:		let allEncrypted = await allSyncTargetItemsEncrypted();
+./packages/lib/services/synchronizer/Synchronizer.e2ee.test.ts:		allEncrypted = await allSyncTargetItemsEncrypted();
+./packages/lib/services/synchronizer/Synchronizer.e2ee.test.ts:		const allEncrypted = await allSyncTargetItemsEncrypted();
+./packages/lib/services/synchronizer/Synchronizer.e2ee.test.ts:		expect(await allSyncTargetItemsEncrypted()).toBe(false);
+./packages/lib/services/synchronizer/Synchronizer.e2ee.test.ts:		expect(await allSyncTargetItemsEncrypted()).toBe(true);
+./packages/lib/services/synchronizer/Synchronizer.e2ee.test.ts:		expect(await allSyncTargetItemsEncrypted()).toBe(true);
+./packages/lib/services/synchronizer/synchronizer_LockHandler.test.ts:// import { isNetworkSyncTarget, fileApi, setupDatabaseAndSynchronizer, synchronizer, switchClient, msleep, expectThrow, expectNotThrow } from '../../testing/test-utils';
+./packages/lib/services/synchronizer/synchronizer_LockHandler.test.ts:// const timeoutMultiplier = isNetworkSyncTarget() ? 100 : 1;
+./packages/lib/SyncTargetNone.ts:import BaseSyncTarget from './BaseSyncTarget';
+./packages/lib/SyncTargetNone.ts:export default class SyncTargetNone extends BaseSyncTarget {
+./packages/lib/debug/DebugService.ts:import SyncTargetJoplinServer from '../SyncTargetJoplinServer';
+./packages/lib/debug/DebugService.ts:		const id = SyncTargetJoplinServer.id();
+./packages/lib/file-api-driver-joplinServer.ts:	private isRejectedBySyncTargetError(error: any) {
+./packages/lib/file-api-driver-joplinServer.ts:			if (this.isRejectedBySyncTargetError(error)) {
+./packages/lib/file-api-driver-joplinServer.ts:			if (response.error && this.isRejectedBySyncTargetError(response.error)) {
+./packages/lib/SyncTargetJoplinServer.ts:import BaseSyncTarget from './BaseSyncTarget';
+./packages/lib/SyncTargetJoplinServer.ts:const staticLogger = Logger.create('SyncTargetJoplinServer');
+./packages/lib/SyncTargetJoplinServer.ts:	fileApi.setSyncTargetId(id);
+./packages/lib/SyncTargetJoplinServer.ts:export default class SyncTargetJoplinServer extends BaseSyncTarget {
+./packages/lib/SyncTargetJoplinServer.ts:		syncTargetId = syncTargetId === null ? SyncTargetJoplinServer.id() : syncTargetId;
+./packages/lib/SyncTargetJoplinServer.ts:		return initFileApi(SyncTargetJoplinServer.id(), this.logger(), {
+./packages/app-cli/app/command-sync.ts:import SyncTargetRegistry from '@joplin/lib/SyncTargetRegistry';
+./packages/app-cli/app/command-sync.ts:		const syncTargetMd = SyncTargetRegistry.idToMetadata(this.syncTargetId_);
